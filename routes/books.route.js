@@ -6,7 +6,7 @@ const multerLib = require("multer")();
 router.post("/create", multerLib.single("image"), controller.createBook);
 router.get("/list", controller.allBook);
 router.get("/detail/:bookId", controller.detailBook);
-router.post("/update/:bookId", controller.updateBook);
+router.put("/update/:bookId", controller.updateBook);
 router.delete("/delete/:bookId", controller.deleteBook);
 
 module.exports = router;

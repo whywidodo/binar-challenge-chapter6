@@ -95,8 +95,9 @@ const updateBook = async (req, res) => {
       },
     });
 
-    return res.status(201).json({
+    return res.json({
       error: false,
+      statusCode: res.statusCode,
       message: `Update book sucessful`,
       data: data,
     });
