@@ -6,7 +6,8 @@ router.get("/", (req, res) => {
   return res.status(200).json({
     success: "Ok",
     statusCode: "200",
-    message: "Your API url is ready to use.",
+    message: "Your API url is ready to use. Please access in /api/v1",
+    author: "Wahyu Widodo",
   });
 });
 
