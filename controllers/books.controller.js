@@ -20,12 +20,14 @@ const createBook = async (req, res) => {
 
     return res.status(201).json({
       error: false,
+      statusCode: res.statusCode,
       message: "Book successful created",
       data: data,
     });
   } catch (error) {
     return res.status(500).json({
       error: true,
+      statusCode: res.statusCode,
       message: error,
     });
   }
@@ -41,12 +43,14 @@ const allBook = async (req, res) => {
 
     return res.status(200).json({
       error: false,
+      statusCode: res.statusCode,
       message: "Loaded all book data successful",
       data: data,
     });
   } catch (error) {
     return res.status(500).json({
       error: true,
+      statusCode: res.statusCode,
       message: error,
     });
   }
@@ -63,12 +67,14 @@ const detailBook = async (req, res) => {
     if (data != null) {
       return res.status(200).json({
         error: false,
+        statusCode: res.statusCode,
         message: "Load book successful",
         data: data,
       });
     } else {
       return res.status(200).json({
         error: false,
+        statusCode: res.statusCode,
         message: "Book is empty",
         data: data,
       });
@@ -76,6 +82,7 @@ const detailBook = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       error: true,
+      statusCode: res.statusCode,
       message: error,
     });
   }
@@ -104,6 +111,7 @@ const updateBook = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       error: true,
+      statusCode: res.statusCode,
       message: error,
     });
   }
@@ -122,12 +130,14 @@ const deleteBook = async (req, res) => {
     if (data != null) {
       return res.status(200).json({
         error: false,
+        statusCode: res.statusCode,
         message: `Sucessful delete book with id ${bookId}`,
         data: null,
       });
     } else {
       return res.status(200).json({
         error: false,
+        statusCode: res.statusCode,
         message: `Book with ${bookId} not found`,
         data: null,
       });
@@ -135,6 +145,7 @@ const deleteBook = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       error: true,
+      statusCode: res.statusCode,
       message: error,
     });
   }
